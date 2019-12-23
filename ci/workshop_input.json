@@ -9,7 +9,7 @@
     },
     {
         "ParameterKey": "KeyPairName",
-        "ParameterValue": "qaworkshop"
+        "ParameterValue": "qsworkshop"
     },
     {
         "ParameterKey": "RemoteAccessCIDR",
