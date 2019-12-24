@@ -137,6 +137,7 @@ Resources:
         PublicSubnet2CIDR: !Ref PublicSubnet2CIDR
         VPCCIDR: !Ref VPCCIDR
   BastionStack:
+    DependsOn: VPCStack
     Type: AWS::CloudFormation::Stack
     Properties:
       TemplateURL:
@@ -167,6 +168,7 @@ Resources:
           - VPCStack
           - Outputs.VPCID
   WorkloadStack:
+    DependsOn: VPCStack
     Type: AWS::CloudFormation::Stack
     Properties:
       TemplateURL:

@@ -145,14 +145,13 @@ Resources:
       MaxSize: '8'
       TargetGroupARNs:
         - !Ref ALBTargetGroup
-      NotificationConfigurations:
-      - TopicARN:
-          !Ref NotificationTopic      
+      NotificationConfiguration:
+        TopicARN: !Ref NotificationTopic
         NotificationTypes:
-          - autoscaling:EC2_INSTANCE_LAUNCH
-          - autoscaling:EC2_INSTANCE_LAUNCH_ERROR
-          - autoscaling:EC2_INSTANCE_TERMINATE
-          - autoscaling:EC2_INSTANCE_TERMINATE_ERROR
+          - 'autoscaling:EC2_INSTANCE_LAUNCH'
+          - 'autoscaling:EC2_INSTANCE_LAUNCH_ERROR'
+          - 'autoscaling:EC2_INSTANCE_TERMINATE'
+          - 'autoscaling:EC2_INSTANCE_TERMINATE_ERROR'
     CreationPolicy:
       ResourceSignal:
         Timeout: PT15M
@@ -162,7 +161,7 @@ Resources:
         MinInstancesInService: 1
         MaxBatchSize: 1
         PauseTime: PT15M
-        WaitOnResourceSignals: true
+        WaitOnResourceSignals: 'true'
   WebServerLaunchConfig:
     Type: 'AWS::AutoScaling::LaunchConfiguration'
     Metadata:
@@ -271,8 +270,8 @@ Resources:
       Namespace: AWS/EC2
       Statistic: Average
       Period: 300
-      EvaluationPeriods: 2
-      Threshold: 90
+      EvaluationPeriods: '2'
+      Threshold: '90'
       AlarmActions:
         - !Ref WebServerScaleUpPolicy
       Dimensions:
