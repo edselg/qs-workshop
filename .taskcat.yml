@@ -1,6 +1,6 @@
 project:
   name: qs-workshop
-  owner: tonynv@amazon.com
+  owner: owner@amazon.com
   package_lambda: false
   regions:
   - ap-southeast-1
@@ -15,7 +15,7 @@ tests:
   lab-master-vpc:
     parameters:
       AvailabilityZones: $[taskcat_getaz_2]
-      EmailAddress: email@yourdomain.com
+      EmailAddress: owner@amazon.com
       KeyPairName: qsworkshop
       QSS3BucketName: $[taskcat_autobucket]
       QSS3KeyPrefix: qs-workshop/
