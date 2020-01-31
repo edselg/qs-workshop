@@ -210,20 +210,20 @@ Resources:
           Fn::GetAtt:
           - VPCStack
           - Outputs.VPCCIDR
-  DatabaseStack:
-    Type: AWS::CloudFormation::Stack
-    Properties:
-      TemplateURL:
-        Fn::Sub: https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}templates/openedge-database.template.yaml
-      Parameters:
-        KeyPairName: !Ref KeyPairName
-  PASOEStack:
-    Type: AWS::CloudFormation::Stack
-    Properties:
-      TemplateURL:
-        Fn::Sub: https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}templates/openedge-pasoe.template.yaml
-      Parameters:
-        KeyPairName: !Ref KeyPairName
+#  DatabaseStack:
+#    Type: AWS::CloudFormation::Stack
+#    Properties:
+#      TemplateURL:
+#        Fn::Sub: https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}templates/openedge-database.template.yaml
+#      Parameters:
+#        KeyPairName: !Ref KeyPairName
+#  PASOEStack:
+#    Type: AWS::CloudFormation::Stack
+#    Properties:
+#      TemplateURL:
+#        Fn::Sub: https://${QSS3BucketName}.s3.amazonaws.com/${QSS3KeyPrefix}templates/openedge-pasoe.template.yaml
+#      Parameters:
+#        KeyPairName: !Ref KeyPairName
 Outputs:
   WebURL:
     Description: "The web server URL"
