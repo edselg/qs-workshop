@@ -25,9 +25,11 @@ Mappings:
     AMI:
       OEDBHVM: OpenEdge database AMI
     us-east-1:
-      OEDBHVM: ami-010f679e1bd77804f
+#      OEDBHVM: ami-010f679e1bd77804f
+      OEDBHVM: ami-062f7200baf2fa504
     us-west-2:
-      OEDBHVM: ami-08af01d46d589c6ec
+#      OEDBHVM: ami-08af01d46d589c6ec
+      OEDBHVM: ami-04590e7389a6e577c
 Resources:
   EC2Instance:
     Type: 'AWS::EC2::Instance'
